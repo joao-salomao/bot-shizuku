@@ -45,7 +45,7 @@ async function suggestAnime(message) {
   const { title, image_url, synopsis } = response.data;
   const embed = new Discord.RichEmbed()
     .setColor("#1f94b8")
-    .setTitle(`Shizuku Suggestion: ${title}`)
+    .setTitle(title)
     .setDescription(synopsis)
     .setImage(
       image_url != null
