@@ -1,32 +1,30 @@
 const Discord = require("discord.js");
 const {
-    initData,
-    sendCatPicture,
-    suggestAnime
-} = require('./events/message')
-const {
-  setActivity
-} = require('./config/botConfig')
+  initData,
+  sendCatPicture,
+  suggestAnime,
+} = require("./events/message");
+const { setActivity } = require("./config/botConfig");
 const client = new Discord.Client();
 
 client.on("ready", () => {
-  setActivity(client)
+  setActivity(client);
   initData();
 });
 
 client.on("message", msg => {
-  setActivity(client)
+  setActivity(client);
 
   if (msg.author.bot) return;
 
-  const content = msg.content.toLocaleLowerCase()
+  const content = msg.content.toLocaleLowerCase();
 
   if (content === "sh!cat") {
-    sendCatPicture(msg);
+    return sendCatPicture(msg);
   }
 
   if (content === "sh!anime suggestion") {
-    suggestAnime(msg);
+    return suggestAnime(msg);
   }
 });
 

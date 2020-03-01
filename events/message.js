@@ -51,7 +51,7 @@ async function initData() {
 }
 
 module.exports = {
-    initData,
-    sendCatPicture,
-    suggestAnime
-}
+  initData,
+  sendCatPicture,
+  suggestAnime,
+};
