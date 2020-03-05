@@ -3,6 +3,7 @@ const {
   initData,
   sendCatPicture,
   suggestAnime,
+  search
 } = require("./events/message");
 const { setActivity } = require("./config/botConfig");
 const client = new Discord.Client();
@@ -26,6 +27,10 @@ client.on("message", msg => {
   if (content === "sh!anime suggestion") {
     return suggestAnime(msg);
   }
+
+  // if (content.includes("sh!search")) {
+  //   return search(msg, content);
+  // }
 });
 
 client.login("NjgxOTYxODY3NzE5MzQ0MTgx.XlWFAQ.Iql3XKv-zgLmscqmfCafMWGSuWA");
