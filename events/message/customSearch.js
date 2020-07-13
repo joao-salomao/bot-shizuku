@@ -1,12 +1,11 @@
-const config = require("../../config/appConfig");
 const { google } = require("googleapis");
 const customSearch = google.customsearch("v1");
 
 const search = async (message, q) => {
   let isPhoto = false;
   const options = {
-    auth: config.googleApiKey,
-    cx: config.googleCX,
+    auth: process.env.GOOGLE_API_KEY,
+    cx: process.env.GOOGLE_CX,
     num: 10
   };
 

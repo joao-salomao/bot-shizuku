@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Discord = require("discord.js");
 const {
   initData,
@@ -28,9 +29,9 @@ client.on("message", msg => {
     return suggestAnime(msg);
   }
 
-  // if (content.includes("sh!search")) {
-  //   return search(msg, content);
-  // }
+  if (content.includes("sh!search")) {
+    return search(msg, content);
+  }
 });
 
-client.login("NjgxOTYxODY3NzE5MzQ0MTgx.XlWFAQ.Iql3XKv-zgLmscqmfCafMWGSuWA");
+client.login(process.env.DISCORD_BOT_TOKEN);
