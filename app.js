@@ -1,7 +1,6 @@
 require('dotenv').config();
 const Discord = require("discord.js");
 const {
-  initData,
   sendPicture,
   suggestAnime,
   search
@@ -11,7 +10,6 @@ const client = new Discord.Client();
 
 client.on("ready", () => {
   setActivity(client);
-  initData();
 });
 
 client.on("message", msg => {

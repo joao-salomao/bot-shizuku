@@ -5,7 +5,7 @@ const data = {
   animesIDs: []
 };
 
-const initData = async () => {
+(async () => {
   const response1 = await axios.get(
     "https://api.jikan.moe/v3/user/moonbox/animelist/all/1"
   );
@@ -17,7 +17,7 @@ const initData = async () => {
   data.animesIDs = data.animesIDs.concat(
     response2.data.anime.map(anime => anime.mal_id)
   );
-};
+})()
 
 const suggestAnime = async message => {
   try {
@@ -41,7 +41,4 @@ const suggestAnime = async message => {
   }
 };
 
-module.exports = {
-  initData,
-  suggestAnime
-};
+module.exports = suggestAnime
