@@ -1,15 +1,16 @@
 const axios = require("axios");
 
 const sendCatPicture = async message => {
-  const response = await axios.get(
-    `https://pixabay.com/api/?key=15390583-f0d2e1b4c8c96b27978676e4e&q=gato&image_type=photo&per_page=200`
-  );
-
-  const index = Math.floor(Math.random() * response.data.hits.length);
-  const url = response.data.hits[index].largeImageURL;
+  const url = 'https://api.thecatapi.com/v1/images/search'
+  const resp = await axios.get(url, {
+    headers: {
+      "x-api-key": process.env.THE_CAT_API_KEY
+    }
+  });
+  const pictureUrl = resp.data[0].url
 
   message.reply("a cute cat for you", {
-    files: [url]
+    files: [pictureUrl]
   });
 };
 
