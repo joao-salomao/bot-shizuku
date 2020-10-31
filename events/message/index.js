@@ -2,12 +2,12 @@ const {
     initData,
     suggestAnime
 } = require('./suggestAnime')
-const sendCatPicture = require('./sendCatPicture')
+const sendPicture = require('./picture-sender')
 const search = require('./customSearch')
 
 module.exports = {
     initData,
     suggestAnime,
-    sendCatPicture,
+    sendPicture,
     search
 }

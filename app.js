@@ -2,7 +2,7 @@ require('dotenv').config();
 const Discord = require("discord.js");
 const {
   initData,
-  sendCatPicture,
+  sendPicture,
   suggestAnime,
   search
 } = require("./events/message");
@@ -22,7 +22,11 @@ client.on("message", msg => {
   const content = msg.content.toLocaleLowerCase();
 
   if (content === "sh!cat") {
-    return sendCatPicture(msg);
+    return sendPicture(msg, 'cat');
+  }
+
+  if (content === "sh!dog") {
+    return sendPicture(msg, 'dog');
   }
 
   if (content === "sh!anime suggestion") {
