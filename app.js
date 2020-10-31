@@ -5,7 +5,7 @@ const {
   suggestAnime,
   search
 } = require("./events/message");
-const { setActivity } = require("./config/botConfig");
+const { setActivity } = require("./config/setup");
 const client = new Discord.Client();
 
 client.on("ready", () => {
